@@ -1,6 +1,8 @@
 # Project/Activity Management Web App
+![Login Page](https://github.com/Eclec1r0n/project-managment-webapp/blob/main/Images/Login.png)
+![Kanban Page](https://github.com/Eclec1r0n/project-managment-webapp/blob/main/Images/Kanban.png)
 ## Demo
-[Video Demo](https://youtu.be/fJNreoZ-oy0)
+[Video Demo](https://www.youtube.com/watch?v=fJNreoZ-oy0&ab_channel=ChetasPattir)
 ## Description
 This is a simple Fullstack Application(MERN) which currently consists of a functionality to create and modify multiple Kanban Boards.
 * **Front-End:**  
