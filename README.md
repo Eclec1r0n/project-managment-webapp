@@ -1,6 +1,5 @@
 # Project/Activity Management Web App
 ## Demo
----
 [Video Demo](https://youtu.be/fJNreoZ-oy0)
 ## Description
 This is a simple Fullstack Application(MERN) which currently consists of a functionality to create and modify multiple Kanban Boards.
