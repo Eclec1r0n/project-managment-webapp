@@ -13,7 +13,7 @@ const App = ()=>{
         axios({
             method: "GET",
             withCredentials: true,
-            url: process.env.REACT_APP_API_URL+"/local-auth",
+            url: process.env.REACT_APP_API_URL+"/authenticate",
           })
           .then((res) => {
             if(res.data==="Y")

@@ -1,7 +1,8 @@
 const router =require("express").Router();
 const passport = require("passport");
 const userList=require("../Database/user");
-const boardList=require("../Database/board")
+const boardList=require("../Database/board");
+const user = require("../Database/user");
 require("dotenv").config();
 
   router.get("/get/:id",async (req,res)=>{
@@ -9,7 +10,10 @@ require("dotenv").config();
       res.send("Not authorised!")
       return;
     }
-    
+    if(req.user.boardId.find((id)=>id===req.params.id)===undefined){
+      res.send("N");
+      return;
+    }
     boardList.findOne({"id":req.params.id},(err, data)=>{
         if (!err) {
           if(!data){
@@ -145,14 +149,14 @@ require("dotenv").config();
   router.get("/google", passport.authenticate("google", { scope: ["profile","email"] }));
   
   router.get("/google/callback", 
-    passport.authenticate("google", { failureRedirect: '/local-auth', session:true }),
+    passport.authenticate("google", { failureRedirect: "/authenticate"}),
     (req, res)=> {
       res.redirect(process.env.CLIENT_URL);
   });
 
-  router.get("/local-auth",async (req,res,next)=>{
+  router.get("/authenticate",async (req,res,next)=>{
     if(req.user)
-    res.send("Y");
+      res.send("Y");
     else{
       res.send("N");
     }
